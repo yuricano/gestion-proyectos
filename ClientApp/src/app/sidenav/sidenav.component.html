@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+    #drawer
+    [opened]="!small"
+    class="sidenav mat-elevation-z8"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
+      <mat-toolbar class="white"><img src="assets/img/logo.png" style="margin:auto; width:80%"></mat-toolbar>
+      <mat-nav-list>
+        <a class="sidenavelement" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" mat-list-item href="#"><mat-icon>person</mat-icon> &nbsp; Acceso</a>
+        <a class="sidenavelement" routerLinkActive="active-link" routerLink="gestion" mat-list-item href="#"><mat-icon>build</mat-icon> &nbsp; Gestión</a>
+        <a class="sidenavelement" routerLinkActive="active-link" routerLink="estimacion" mat-list-item href="#"><mat-icon>assignment</mat-icon> &nbsp; Estimación</a>
+        <a class="sidenavelement" routerLinkActive="active-link" routerLink="aprobacion" mat-list-item href="#"><mat-icon>assignment_turned_in</mat-icon> &nbsp; Aprobación</a>
+        <a class="sidenavelement" routerLinkActive="active-link" routerLink="reportes" mat-list-item href="#"><mat-icon>description</mat-icon> &nbsp; Reportes</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar class="grey lighten-2" style="min-height:90px">
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()" >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+        <span>Afirme - Gestión de proyectos</span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="example-fill-remaining-space"></span>
+        <p class="hide-on-med-and-down" style="margin-top:-10px">
+        <mat-form-field appearance="legacy" style="max-height:50px; padding-bottom: 0px; margin-bottom: 0px !important; margin-top: -10px">
+          <mat-label>Buscar</mat-label>
+          <input  matInput >
+          <mat-icon  matSuffix>search</mat-icon>
+        </mat-form-field>
+      </p>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

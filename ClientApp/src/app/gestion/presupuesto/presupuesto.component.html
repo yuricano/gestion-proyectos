@@ -1,0 +1,87 @@
+<form>
+  <div class="row marleft">
+    <div class="col m12 s12" style="margin-top:40px">
+      <div class="col m12 s12 white mat-elevation-z4" style="border-radius:4px">
+        <div class="col m12 s12 mat-elevation-z8" style="margin-top:-30px; border-radius:4px;
+		background: linear-gradient(60deg,#009639, #bae557)">
+          <h5 class="white-text">Prespuesto - Caratula</h5>
+        </div>
+
+        <div class="col m12 s12" style="margin-top:20px; margin-bottom: 20px">
+          <div class="col m3 s12">
+            <mat-form-field class="example-full-width">
+              <input id="idsap" matInput placeholder="ID SAP" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col m12 s12">
+          <div class="col m3 s12 mat-form-field">
+            <mat-form-field class="example-full-width mat-form-field-100">
+              <input id="nombre" matInput placeholder="Nombre" required />
+            </mat-form-field>
+          </div>
+
+          <div class="col m3 s12 mat-form-field">
+            <mat-form-field class="example-full-width mat-form-field-100">
+              <input id="cc" matInput placeholder="Cento de Costos" required />
+            </mat-form-field>
+          </div>
+
+          <div class="col m3 s12">
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="fechaIni" placeholder="Fecha Inicio" required>
+              <mat-datepicker-toggle matSuffix [for]="fechaIni"></mat-datepicker-toggle>
+              <mat-datepicker #fechaIni></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col m3 s12">
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="fechaFin" placeholder="Fecha Fin" required>
+              <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+              <mat-datepicker #fechaFin></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col m3 s12">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tipo Proyecto</mat-label>
+              <mat-select required>
+                <mat-option *ngFor="let tipo of TipoProyecto" [value]="tipo">
+                  {{ tipo }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col m3 s12">
+            <mat-form-field class="example-full-width">
+              <mat-label>Sub Tipo</mat-label>
+              <mat-select required>
+                <mat-option *ngFor="let sub of SubTipo" [value]="sub">
+                  {{ sub }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col m12 s12">
+          <div class="col m8 s12">
+            <mat-form-field class="example-full-width">
+              <textarea id="descripcion" matInput placeholder="Descripción" style="height: 70px;">
+                  </textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="col m12 s12">
+          <button mat-raised-button color="primary" type="submit">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
